@@ -21,7 +21,7 @@
             <Font name="System Bold Italic" size="14.0" />
          </font>
       </Label>
-      <Label fx:id="difuzoare_label" alignment="TOP_CENTER" contentDisplay="TOP" prefHeight="348.0" prefWidth="334.0" text="Inca nu au fost instalate difuzoare in aceasta camera!" textFill="#ff4100">
+      <Label fx:id="difuzoare_label" alignment="TOP_CENTER" contentDisplay="TOP" prefHeight="288.0" prefWidth="398.0" text="Inca nu au fost instalate difuzoare in aceasta camera!" textFill="#000000">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
