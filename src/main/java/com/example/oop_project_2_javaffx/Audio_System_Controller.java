@@ -51,7 +51,11 @@ public class Audio_System_Controller {
         try {
             FXMLLoader Fcamere = new FXMLLoader(getClass().getResource("Camere.fxml"));
             Scene scene = new Scene(Fcamere.load(),500,600);
-            //Creeaza si afiseaza noul stage
+
+            Camere_Controller camere_controller=Fcamere.getController();
+            camere_controller.setLabel_nume_sistem();
+
+
             Stage newStage = new Stage();
             newStage.setScene(scene);
             newStage.show();
