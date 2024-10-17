@@ -1,11 +1,9 @@
 package com.example.oop_project_2_javaffx;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 
-import static AudioSystem.AudioSystem.sistem;
 
 public class Difuzoare_Controller {
 

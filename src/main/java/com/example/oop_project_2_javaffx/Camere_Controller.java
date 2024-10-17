@@ -10,6 +10,7 @@ import javafx.scene.control.*;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
+
 import java.io.IOException;
 import java.util.Optional;
 
@@ -18,43 +19,88 @@ import static AudioSystem.AudioSystem.sistem;
 public class Camere_Controller {
 
     @FXML
-    private Label label_nu_aveti_camere;
+    private Button butt_cam_1;
     @FXML
-    private Button add_camera_buton;
+    private Button butt_cam_2;
+    @FXML
+    private Button butt_cam_3;
+    @FXML
+    private Button butt_cam_4;
+    @FXML
+    private Button butt_cam_5;
+    @FXML
+    private Button butt_cam_6;
+    @FXML
+    private Button butt_cam_7;
+    @FXML
+    private Button butt_cam_8;
+    @FXML
+    private Button butt_cam_9;
+    @FXML
+    private Button butt_cam_10;
 
     @FXML
-    private VBox camereContainer; // Referință la VBox din FXML
-
+    private void on_butt_cam_1() {
+        if(sistem.camera[0]==null){
+            sistem.camera[0]=getNumesiVolum(sistem.camera[0]);
+        }
+        else {
+            deschide_form_difuzoare();
+            butt_cam_2.setDisable(false);
+        }
+    }
     @FXML
-    private Button[] camere_butoane = new Button[10]; // Declarăm un array de butoane
-
+    private void on_butt_cam_2() {
+    }
     @FXML
-    private Scene[] scene_d = new Scene[10];
+    private void on_butt_cam_3() {
+    }
+    @FXML
+    private void on_butt_cam_4() {
+    }
+    @FXML
+    private void on_butt_cam_5() {
+    }
+    @FXML
+    private void on_butt_cam_6() {
+    }
+    @FXML
+    private void on_butt_cam_7() {
+    }
+    @FXML
+    private void on_butt_cam_8() {
+    }
+    @FXML
+    private void on_butt_cam_9() {
+    }
+    @FXML
+    private void on_butt_cam_10() {
+    }
 
-
-    public void on_add_camera() {
-
+    private Camera getNumesiVolum(Camera camera){
         TextInputDialog dialogNume = new TextInputDialog();
         dialogNume.setTitle("Nume Cameră");
-        dialogNume.setHeaderText("Introduceți numele pentru camera " + (sistem.nrcamere + 2));
+        dialogNume.setHeaderText("Introduceți numele pentru camera " + (sistem.nrcamere + 1));
         dialogNume.setContentText("Nume Cameră:");
 
         Optional<String> resultNume = dialogNume.showAndWait();
         if (!resultNume.isPresent() || resultNume.get().isEmpty()) {
             // Dacă nu s-a introdus un nume, nu adăugăm camera
-            return;
+            return null;
         }
+
+        String nume=resultNume.toString();
 
         // Cerem volumul camerei printr-un alt dialog
         TextInputDialog dialogVolum = new TextInputDialog();
         dialogVolum.setTitle("Volum Cameră");
-        dialogVolum.setHeaderText("Introduceți volumul pentru camera " + (sistem.nrcamere + 2));
+        dialogVolum.setHeaderText("Introduceți volumul pentru camera " + (sistem.nrcamere + 1));
         dialogVolum.setContentText("Volum Cameră (0 - 100):");
 
         Optional<String> resultVolum = dialogVolum.showAndWait();
         if (!resultVolum.isPresent() || resultVolum.get().isEmpty()) {
             // Dacă nu s-a introdus volumul, nu adăugăm camera
-            return;
+            return null;
         }
 
         int volumCamera;
@@ -66,52 +112,22 @@ public class Camere_Controller {
         } catch (NumberFormatException e) {
             // Dacă volumul introdus nu este valid, afișăm o eroare și oprim procesul
             new Alert(Alert.AlertType.ERROR, "Volum invalid! Introduceți un număr între 0 și 100.", ButtonType.OK).showAndWait();
-            return;
+            return null;
         }
-
-        // Creștem numărul de camere
-        if(sistem.nrcamere<9) {
-            sistem.nrcamere++;
-        }
-
-        // Inițializăm și adăugăm butonul în VBox
-        camere_butoane[sistem.nrcamere] = new Button("Camera " + (sistem.nrcamere + 1) + ": " + resultNume.get());
-        camereContainer.getChildren().add(camere_butoane[sistem.nrcamere]);
-
-        // Inițializăm camera cu numele și volumul introdus
-        sistem.camera[sistem.nrcamere] = new Camera(resultNume.get(), volumCamera);
-        int index = sistem.nrcamere; // Stocăm indexul pentru utilizarea în lambda
-
-        // Atribuim un handler pentru fiecare buton, afișând informațiile despre camera respectivă
-        camere_butoane[sistem.nrcamere].setOnAction(event -> {
-            //new Alert(Alert.AlertType.INFORMATION, "Camera: " + sistem.camera[index].getNume() + "\nVolum: " + sistem.camera[index].getVolume(), ButtonType.OK).showAndWait();
-            try {
-                FXMLLoader Fdifuzoare = new FXMLLoader(getClass().getResource("Difuzoare.fxml"));
-                scene_d[sistem.nrcamere] = new Scene(Fdifuzoare.load(),500,600);
-                //Creeaza si afiseaza noul stage
-                Stage newStage = new Stage();
-                newStage.setScene(scene_d[sistem.nrcamere]);
-                newStage.setTitle("Camera: "+ sistem.camera[sistem.nrcamere].getNume()+" , Volum: "+sistem.camera[sistem.nrcamere].getVolume());
-                newStage.show();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        });
-
-
-        if(sistem.nrcamere>(-1)) {label_nu_aveti_camere.setText("Numele Audio Sistemului: "+sistem.getNumeSistem());
-            label_nu_aveti_camere.setStyle("-fx-text-fill: #12a0ff;");}
-
-
-        // Dacă avem mai mult de 10 camere, ascundem butonul de adăugare
-        if (sistem.nrcamere >= 9) {
-            add_camera_buton.setVisible(false);
-            add_camera_buton.setText("A-ti atins numarul maxim de camere.");
-        }
+        camera=new Camera(nume,volumCamera);
+        return camera;
     }
 
-
-    public void on_click_camera() {
-
+    private void deschide_form_difuzoare(){
+        try {
+            FXMLLoader Fdifuzoare = new FXMLLoader(getClass().getResource("Difuzoare.fxml"));
+            Scene scene = new Scene(Fdifuzoare.load(),500,600);
+            //Creeaza si afiseaza noul stage
+            Stage newStage = new Stage();
+            newStage.setScene(scene);
+            newStage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
