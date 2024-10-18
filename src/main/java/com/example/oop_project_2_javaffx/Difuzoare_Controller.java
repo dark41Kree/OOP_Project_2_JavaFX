@@ -2,25 +2,35 @@ package com.example.oop_project_2_javaffx;
 
 import AudioSystem.Camera;
 import AudioSystem.Difuzor;
-import javafx.application.Platform;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.stage.Stage;
 
 import java.util.Optional;
-
-import static AudioSystem.AudioSystem.sistem;
 
 
 public class Difuzoare_Controller {
 
+
+
     @FXML
     private Label label_cam_info;
     @FXML
-    private Label difuzoare_label;
+    private Button butt_dif_1;
+    @FXML
+    private Button butt_dif_2;
+    @FXML
+    private Button butt_dif_3;
+    @FXML
+    private Button butt_dif_4;
+    @FXML
+    private Button butt_dif_5;
+    @FXML
+    private Button butt_back_dif;
     @FXML
     private Button buton_add_difuzor;
-    @FXML
-    private Button buton_sterge_difuzor;
+
 
     private Camera camera;
 
@@ -28,21 +38,58 @@ public class Difuzoare_Controller {
     public void setCamera(Camera camera){
         this.camera=camera;
         label_cam_info.setText("Camera: "+camera.getNume()+"   Volum: "+ camera.getVolume());
+        if(camera.difuzor[0]!=null){butt_dif_2.setDisable(false);}
+        if(camera.difuzor[1]!=null){butt_dif_3.setDisable(false);}
+        if(camera.difuzor[2]!=null){butt_dif_4.setDisable(false);}
+        if(camera.difuzor[3]!=null){butt_dif_5.setDisable(false);}
     }
 
-
     @FXML
-    protected void on_add_difuzor(){
-        if(camera.nrdifuzoare<=4) {
+    private void on_dif_cam_1() {
+        if(camera.difuzor[0]==null){
             getPozitiesiFrecventa();
-        } else new Alert(Alert.AlertType.INFORMATION,"Aveti deja nr. maxim de difuzoare in camera care este 5 !" , ButtonType.OK).showAndWait();
-        afiseazaDifuzoare();
-
+            if(camera.difuzor[0]!=null){butt_dif_2.setDisable(false);}
+        }
+        else {
+            deschide_info_difuzor(camera.difuzor,0);
+        }
     }
-
     @FXML
-    protected void on_sterge_difuzor() {
+    private void on_dif_cam_2() {
+        if(camera.difuzor[1]==null){
+            getPozitiesiFrecventa();
+            if(camera.difuzor[1]!=null){butt_dif_3.setDisable(false);}
+        }
+        else {
+            deschide_info_difuzor(camera.difuzor,1);        }
     }
+    @FXML
+    private void on_dif_cam_3() {
+        if(camera.difuzor[2]==null){
+            getPozitiesiFrecventa();
+            if(camera.difuzor[2]!=null){butt_dif_4.setDisable(false);}
+        }
+        else {
+            deschide_info_difuzor(camera.difuzor,2);        }
+    }
+    @FXML
+    private void on_dif_cam_4() {
+        if(camera.difuzor[3]==null){
+            getPozitiesiFrecventa();
+            if(camera.difuzor[3]!=null){butt_dif_5.setDisable(false);}
+        }
+        else {
+            deschide_info_difuzor(camera.difuzor,3);        }
+    }
+    @FXML
+    private void on_dif_cam_5() {
+        if(camera.difuzor[4]==null){
+            getPozitiesiFrecventa();
+        }
+        else {
+            deschide_info_difuzor(camera.difuzor,4);        }
+    }
+
 
 
     private void getPozitiesiFrecventa(){
@@ -73,25 +120,14 @@ public class Difuzoare_Controller {
 
     }
 
-    public void afiseazaDifuzoare(){
-        if(camera.nrdifuzoare>0) {
-            StringBuilder info = new StringBuilder();
+    public void deschide_info_difuzor(Difuzor[] arraydifuzoare, int index){
 
-            for (int i = 0; i < sistem.nrcamere; i++) {
-                info.append("Difuzor ")
-                        .append(i + 1)
-                        .append(": Poziție = ").append(camera.difuzor[i].getPozitie())
-                        .append(", Frecvență = ").append(camera.difuzor[i].getFrecventa())
-                        .append("\n");
-            }
-            //new Alert(Alert.AlertType.INFORMATION, info.toString() , ButtonType.OK).showAndWait();
-            Platform.runLater(() -> difuzoare_label.setText(info.toString()));
-            //difuzoare_label.setAccessibleText(info.toString());
-        }
+            new Alert(Alert.AlertType.INFORMATION,"Camera: "+camera.getNume()+"\n"+"Difuzorul "+(index+1)+"\n"+"Pozitia: "+arraydifuzoare[index].getPozitie()+"\n"+"Frecventa: "+arraydifuzoare[index].getFrecventa(), ButtonType.OK).showAndWait();
     }
 
-
-
-
-
+    @FXML
+    private void on_back() {
+        Stage stage = (Stage) butt_back_dif.getScene().getWindow();
+        stage.close();
+    }
 }

@@ -11,7 +11,7 @@ public class AudioSystem {
 
     private AudioSystem(String nume_audioSystem){
         setNumeSistem(nume_audioSystem);
-        nrcamere=-1;
+        nrcamere=0;
     }
 
     public static AudioSystem get_System(String nume_audioSystem){

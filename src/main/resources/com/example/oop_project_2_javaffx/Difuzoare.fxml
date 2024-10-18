@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="CENTER" prefHeight="495.0" prefWidth="433.0" spacing="20.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oop_project_2_javaffx.Difuzoare_Controller">
+<VBox alignment="CENTER" prefHeight="428.0" prefWidth="376.0" spacing="20.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oop_project_2_javaffx.Difuzoare_Controller">
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
@@ -21,16 +21,11 @@
             <Font name="System Bold Italic" size="14.0" />
          </font>
       </Label>
-      <Label fx:id="difuzoare_label" alignment="TOP_CENTER" contentDisplay="TOP" prefHeight="288.0" prefWidth="398.0" text="Inca nu au fost instalate difuzoare in aceasta camera!" textFill="#000000">
-         <font>
-            <Font name="System Bold" size="12.0" />
-         </font>
-      </Label>
-      <Button fx:id="buton_add_difuzor" mnemonicParsing="false" onAction="#on_add_difuzor" prefHeight="25.0" prefWidth="163.0" style="-fx-background-color: #FD8C38;" text="Adauga Difuzor Nou">
-         <font>
-            <Font name="System Bold Italic" size="12.0" />
-         </font>
-      </Button>
-      <Button fx:id="buton_sterge_difuzor" mnemonicParsing="false" onAction="#on_sterge_difuzor" prefHeight="25.0" prefWidth="177.0" text="Sterge Difuzor" visible="false" />
+      <Button fx:id="butt_dif_1" mnemonicParsing="false" onAction="#on_dif_cam_1" text="Difuzor 1" />
+      <Button fx:id="butt_dif_2" disable="true" mnemonicParsing="false" onAction="#on_dif_cam_2" text="Difuzor 2" />
+      <Button fx:id="butt_dif_3" disable="true" mnemonicParsing="false" onAction="#on_dif_cam_3" text="Difuzor 3" />
+      <Button fx:id="butt_dif_4" disable="true" mnemonicParsing="false" onAction="#on_dif_cam_4" text="Difuzor 4" />
+      <Button fx:id="butt_dif_5" disable="true" mnemonicParsing="false" onAction="#on_dif_cam_5" text="Difuzor 5" />
+      <Button fx:id="butt_back_dif" onAction="#on_back" mnemonicParsing="false" prefHeight="34.0" prefWidth="85.0" text="&lt; Back" />
    </children>
 </VBox>

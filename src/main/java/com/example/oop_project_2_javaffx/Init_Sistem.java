@@ -7,10 +7,10 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class HelloApplication extends Application {
+public class Init_Sistem extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader Fcasa = new FXMLLoader(HelloApplication.class.getResource("Casa_form.fxml"));
+        FXMLLoader Fcasa = new FXMLLoader(Init_Sistem.class.getResource("Casa_form.fxml"));
         Scene scene = new Scene(Fcasa.load(), 420, 340);
         stage.setTitle("Fereastra pentru initializarea sistemului audio!");
         stage.setScene(scene);

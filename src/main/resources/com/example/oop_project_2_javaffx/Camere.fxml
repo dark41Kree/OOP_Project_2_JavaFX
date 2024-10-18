@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="CENTER" prefHeight="544.0" prefWidth="392.0" spacing="20.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oop_project_2_javaffx.Camere_Controller">
+<VBox alignment="CENTER" prefHeight="591.0" prefWidth="392.0" spacing="20.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oop_project_2_javaffx.Camere_Controller">
    <children>
       <Label fx:id="label_nume_sistem" text="Nume sistem">
          <font>
@@ -27,6 +27,7 @@
       <Button fx:id="butt_cam_8" disable="true" mnemonicParsing="false" onAction="#on_butt_cam_8" text="Camera 8" />
       <Button fx:id="butt_cam_9" disable="true" mnemonicParsing="false" onAction="#on_butt_cam_9" text="Camera 9" />
       <Button fx:id="butt_cam_10" disable="true" mnemonicParsing="false" onAction="#on_butt_cam_10" text="Camera 10" />
+      <Button fx:id="butt_back_cam" onAction="#on_back" mnemonicParsing="false" prefHeight="34.0" prefWidth="101.0" text="&lt; Back" />
    </children>
 
 

@@ -1,7 +1,6 @@
 package com.example.oop_project_2_javaffx;
 
 import AudioSystem.AudioSystem;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -43,11 +42,9 @@ public class Audio_System_Controller {
 
     @FXML
     protected void onSistem_next_camere() {
-        //Inchide fereastra sistem
-        Stage stage = (Stage) Sistem_next_camere.getScene().getWindow();
-        stage.close();
+        //Stage stage = (Stage) Sistem_next_camere.getScene().getWindow();
+        //stage.close();
 
-        //Incarca noua fereastra pentru camere
         try {
             FXMLLoader Fcamere = new FXMLLoader(getClass().getResource("Camere.fxml"));
             Scene scene = new Scene(Fcamere.load(),500,600);
@@ -57,12 +54,13 @@ public class Audio_System_Controller {
 
 
             Stage newStage = new Stage();
+
+            newStage.setTitle("Manager de camere");
             newStage.setScene(scene);
             newStage.show();
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
-
 
 }
