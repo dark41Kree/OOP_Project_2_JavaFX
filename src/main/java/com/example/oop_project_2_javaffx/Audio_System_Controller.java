@@ -1,6 +1,5 @@
 package com.example.oop_project_2_javaffx;
 
-import AudioSystem.AudioSystem;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -27,14 +26,14 @@ public class Audio_System_Controller {
     @FXML
     protected void onHelloButtonClick() {
 
-        if(field_nume_sistem.getText().isEmpty()){
-            new Alert(Alert.AlertType.WARNING,"Introdu numele pentru Sistemul Audio si apasa Next" , ButtonType.OK).showAndWait();
+        if (field_nume_sistem.getText().isBlank()) {
+            new Alert(Alert.AlertType.WARNING, "Introdu numele pentru Sistemul Audio si apasa Next", ButtonType.OK).showAndWait();
         } else {
             get_System(field_nume_sistem.getText());
-            new Alert(Alert.AlertType.INFORMATION,"Sistemul Audio a fost creat cu succes!" , ButtonType.OK).showAndWait();
+            new Alert(Alert.AlertType.INFORMATION, "Sistemul Audio a fost creat cu succes!", ButtonType.OK).showAndWait();
             button_sistem_form.setVisible(false);
             field_nume_sistem.setVisible(false);
-            label_nume_sistem.setText("Numele Sistemului: "+sistem.getNumeSistem());
+            label_nume_sistem.setText("Numele Sistemului: " + sistem.getNumeSistem());
             Sistem_next_camere.setVisible(true);
         }
 
@@ -47,9 +46,9 @@ public class Audio_System_Controller {
 
         try {
             FXMLLoader Fcamere = new FXMLLoader(getClass().getResource("Camere.fxml"));
-            Scene scene = new Scene(Fcamere.load(),500,600);
+            Scene scene = new Scene(Fcamere.load(), 500, 600);
 
-            Camere_Controller camere_controller=Fcamere.getController();
+            Camere_Controller camere_controller = Fcamere.getController();
             camere_controller.setLabel_nume_sistem();
 
 
@@ -62,5 +61,5 @@ public class Audio_System_Controller {
             e.printStackTrace();
         }
     }
-
+    
 }

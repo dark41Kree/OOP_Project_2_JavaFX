@@ -2,15 +2,12 @@ package com.example.oop_project_2_javaffx;
 
 
 import AudioSystem.Camera;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-
 
 import java.io.IOException;
 import java.util.Optional;
@@ -48,119 +45,154 @@ public class Camere_Controller {
     @FXML
     public void setLabel_nume_sistem() {
         label_nume_sistem.setText(sistem.getNumeSistem());
-        if(sistem.camera[0]!=null){butt_cam_2.setDisable(false);}
-        if(sistem.camera[1]!=null){butt_cam_3.setDisable(false);}
-        if(sistem.camera[2]!=null){butt_cam_4.setDisable(false);}
-        if(sistem.camera[3]!=null){butt_cam_5.setDisable(false);}
-        if(sistem.camera[4]!=null){butt_cam_6.setDisable(false);}
-        if(sistem.camera[5]!=null){butt_cam_7.setDisable(false);}
-        if(sistem.camera[6]!=null){butt_cam_8.setDisable(false);}
-        if(sistem.camera[7]!=null){butt_cam_9.setDisable(false);}
-        if(sistem.camera[8]!=null){butt_cam_10.setDisable(false);}
+        if (sistem.camera[0] != null) {
+            butt_cam_2.setDisable(false);
+        }
+        if (sistem.camera[1] != null) {
+            butt_cam_3.setDisable(false);
+        }
+        if (sistem.camera[2] != null) {
+            butt_cam_4.setDisable(false);
+        }
+        if (sistem.camera[3] != null) {
+            butt_cam_5.setDisable(false);
+        }
+        if (sistem.camera[4] != null) {
+            butt_cam_6.setDisable(false);
+        }
+        if (sistem.camera[5] != null) {
+            butt_cam_7.setDisable(false);
+        }
+        if (sistem.camera[6] != null) {
+            butt_cam_8.setDisable(false);
+        }
+        if (sistem.camera[7] != null) {
+            butt_cam_9.setDisable(false);
+        }
+        if (sistem.camera[8] != null) {
+            butt_cam_10.setDisable(false);
+        }
     }
 
 
     @FXML
     private void on_butt_cam_1() {
-        if(sistem.camera[0]==null){
+        if (sistem.camera[0] == null) {
             getNumesiVolum();
-            if(sistem.camera[0]!=null){butt_cam_2.setDisable(false);}
-        }
-        else {
-            deschide_form_difuzoare(sistem.camera,0);
-        }
-    }
-    @FXML
-    private void on_butt_cam_2() {
-        if(sistem.camera[1]==null){
-            getNumesiVolum();
-            if(sistem.camera[1]!=null){butt_cam_3.setDisable(false);}
-        }
-        else {
-            deschide_form_difuzoare(sistem.camera,1);
-        }
-    }
-    @FXML
-    private void on_butt_cam_3() {
-        if(sistem.camera[2]==null){
-            getNumesiVolum();
-            if(sistem.camera[2]!=null){butt_cam_4.setDisable(false);}
-        }
-        else {
-            deschide_form_difuzoare(sistem.camera,2);
-        }
-    }
-    @FXML
-    private void on_butt_cam_4() {
-        if(sistem.camera[3]==null){
-            getNumesiVolum();
-            if(sistem.camera[3]!=null){butt_cam_5.setDisable(false);}
-        }
-        else {
-            deschide_form_difuzoare(sistem.camera,3);
-        }
-    }
-    @FXML
-    private void on_butt_cam_5() {
-        if(sistem.camera[4]==null){
-            getNumesiVolum();
-            if(sistem.camera[4]!=null){butt_cam_6.setDisable(false);}
-        }
-        else {
-            deschide_form_difuzoare(sistem.camera,4);
-        }
-    }
-    @FXML
-    private void on_butt_cam_6() {
-        if(sistem.camera[5]==null){
-            getNumesiVolum();
-            if(sistem.camera[5]!=null){butt_cam_7.setDisable(false);}
-        }
-        else {
-            deschide_form_difuzoare(sistem.camera,5);
-        }
-    }
-    @FXML
-    private void on_butt_cam_7() {
-        if(sistem.camera[6]==null){
-            getNumesiVolum();
-            if(sistem.camera[6]!=null){butt_cam_8.setDisable(false);}
-        }
-        else {
-            deschide_form_difuzoare(sistem.camera,6);
-        }
-    }
-    @FXML
-    private void on_butt_cam_8() {
-        if(sistem.camera[7]==null){
-            getNumesiVolum();
-            if(sistem.camera[7]!=null){butt_cam_9.setDisable(false);}
-        }
-        else {
-            deschide_form_difuzoare(sistem.camera,7);
-        }
-    }
-    @FXML
-    private void on_butt_cam_9() {
-        if(sistem.camera[8]==null){
-            getNumesiVolum();
-            if(sistem.camera[8]!=null){butt_cam_10.setDisable(false);}
-        }
-        else {
-            deschide_form_difuzoare(sistem.camera,8);
-        }
-    }
-    @FXML
-    private void on_butt_cam_10() {
-        if(sistem.camera[9]==null){
-            getNumesiVolum();
-        }
-        else {
-            deschide_form_difuzoare(sistem.camera,9);
+            if (sistem.camera[0] != null) {
+                butt_cam_2.setDisable(false);
+            }
+        } else {
+            deschide_form_difuzoare(sistem.camera, 0);
         }
     }
 
-    private void getNumesiVolum(){
+    @FXML
+    private void on_butt_cam_2() {
+        if (sistem.camera[1] == null) {
+            getNumesiVolum();
+            if (sistem.camera[1] != null) {
+                butt_cam_3.setDisable(false);
+            }
+        } else {
+            deschide_form_difuzoare(sistem.camera, 1);
+        }
+    }
+
+    @FXML
+    private void on_butt_cam_3() {
+        if (sistem.camera[2] == null) {
+            getNumesiVolum();
+            if (sistem.camera[2] != null) {
+                butt_cam_4.setDisable(false);
+            }
+        } else {
+            deschide_form_difuzoare(sistem.camera, 2);
+        }
+    }
+
+    @FXML
+    private void on_butt_cam_4() {
+        if (sistem.camera[3] == null) {
+            getNumesiVolum();
+            if (sistem.camera[3] != null) {
+                butt_cam_5.setDisable(false);
+            }
+        } else {
+            deschide_form_difuzoare(sistem.camera, 3);
+        }
+    }
+
+    @FXML
+    private void on_butt_cam_5() {
+        if (sistem.camera[4] == null) {
+            getNumesiVolum();
+            if (sistem.camera[4] != null) {
+                butt_cam_6.setDisable(false);
+            }
+        } else {
+            deschide_form_difuzoare(sistem.camera, 4);
+        }
+    }
+
+    @FXML
+    private void on_butt_cam_6() {
+        if (sistem.camera[5] == null) {
+            getNumesiVolum();
+            if (sistem.camera[5] != null) {
+                butt_cam_7.setDisable(false);
+            }
+        } else {
+            deschide_form_difuzoare(sistem.camera, 5);
+        }
+    }
+
+    @FXML
+    private void on_butt_cam_7() {
+        if (sistem.camera[6] == null) {
+            getNumesiVolum();
+            if (sistem.camera[6] != null) {
+                butt_cam_8.setDisable(false);
+            }
+        } else {
+            deschide_form_difuzoare(sistem.camera, 6);
+        }
+    }
+
+    @FXML
+    private void on_butt_cam_8() {
+        if (sistem.camera[7] == null) {
+            getNumesiVolum();
+            if (sistem.camera[7] != null) {
+                butt_cam_9.setDisable(false);
+            }
+        } else {
+            deschide_form_difuzoare(sistem.camera, 7);
+        }
+    }
+
+    @FXML
+    private void on_butt_cam_9() {
+        if (sistem.camera[8] == null) {
+            getNumesiVolum();
+            if (sistem.camera[8] != null) {
+                butt_cam_10.setDisable(false);
+            }
+        } else {
+            deschide_form_difuzoare(sistem.camera, 8);
+        }
+    }
+
+    @FXML
+    private void on_butt_cam_10() {
+        if (sistem.camera[9] == null) {
+            getNumesiVolum();
+        } else {
+            deschide_form_difuzoare(sistem.camera, 9);
+        }
+    }
+
+    private void getNumesiVolum() {
         TextInputDialog dialogNume = new TextInputDialog();
         dialogNume.setTitle("Nume Cameră");
         dialogNume.setHeaderText("Introduceți numele pentru camera " + (sistem.nrcamere + 1));
@@ -171,7 +203,7 @@ public class Camere_Controller {
             new Alert(Alert.AlertType.ERROR, "Nume cameră invalid!", ButtonType.OK).showAndWait();
             return;
         }
-        String nume=resultNume.get();
+        String nume = resultNume.get();
 
         TextInputDialog dialogVolum = new TextInputDialog();
         dialogVolum.setTitle("Volum Cameră");
@@ -193,22 +225,23 @@ public class Camere_Controller {
             new Alert(Alert.AlertType.ERROR, "Volum invalid! Introduceți un număr întreg între 0 și 100.", ButtonType.OK).showAndWait();
             return;
         }
-        sistem.addcamera(nume,volumCamera);
+        sistem.addcamera(nume, volumCamera);
         //sistem.nrcamere++;
 
     }
 
-    private void deschide_form_difuzoare(Camera[] arrayCamere,int index){
+
+    private void deschide_form_difuzoare(Camera[] arrayCamere, int index) {
         try {
             FXMLLoader Fdifuzoare = new FXMLLoader(getClass().getResource("Difuzoare.fxml"));
 
-            Parent root= Fdifuzoare.load();
-            Difuzoare_Controller controller=Fdifuzoare.getController();
+            Parent root = Fdifuzoare.load();
+            Difuzoare_Controller controller = Fdifuzoare.getController();
 
             controller.setCamera(arrayCamere[index]);
 
 
-            Scene scene = new Scene(root,500,600);
+            Scene scene = new Scene(root, 500, 600);
             Stage newStage = new Stage();
             newStage.setTitle("Manager de difuzoare");
             newStage.setScene(scene);

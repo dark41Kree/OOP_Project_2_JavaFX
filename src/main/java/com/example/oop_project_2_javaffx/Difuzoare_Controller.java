@@ -95,7 +95,7 @@ public class Difuzoare_Controller {
     private void getPozitiesiFrecventa(){
         TextInputDialog dialogPozitie = new TextInputDialog();
         dialogPozitie.setTitle("Pozitie difuzor");
-        dialogPozitie.setHeaderText("Introduceți pozitia pentru difuzorul "+(camera.nrdifuzoare+1)+" (FR,FL,Center,RR,RB)");
+        dialogPozitie.setHeaderText("Introduceți pozitia pentru difuzorul "+(camera.nrdifuzoare+1)+" (FR,FL,Center,RR,RL)");
         dialogPozitie.setContentText("Pozitie difuzor:");
 
         Optional<String> resultPozitie = dialogPozitie.showAndWait();
