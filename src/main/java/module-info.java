@@ -5,6 +5,10 @@ module com.example.oop_project_2_javaffx {
     requires com.dlsc.formsfx;
     requires java.desktop;
 
-    opens com.example.oop_project_2_javaffx to javafx.fxml;
-    exports com.example.oop_project_2_javaffx;
+    opens Controller to javafx.fxml;
+    exports Controller;
+
+    exports View to javafx.graphics;
+
 }
+

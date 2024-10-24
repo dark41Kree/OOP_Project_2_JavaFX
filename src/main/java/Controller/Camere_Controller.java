@@ -1,15 +1,12 @@
-package com.example.oop_project_2_javaffx;
+package Controller;
 
 
 import AudioSystem.Camera;
+import View.Difuzoare_View;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
 
-import java.io.IOException;
 import java.util.Optional;
 
 import static AudioSystem.AudioSystem.sistem;
@@ -232,6 +229,10 @@ public class Camere_Controller {
 
 
     private void deschide_form_difuzoare(Camera[] arrayCamere, int index) {
+
+
+        Difuzoare_View.open_Difuzoare_View(arrayCamere, index);
+        /*
         try {
             FXMLLoader Fdifuzoare = new FXMLLoader(getClass().getResource("Difuzoare.fxml"));
 
@@ -250,6 +251,8 @@ public class Camere_Controller {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+         */
     }
 
     @FXML
