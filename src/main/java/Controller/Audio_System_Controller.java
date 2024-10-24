@@ -1,13 +1,16 @@
 package Controller;
 
+import Interfaces.Close_Window;
 import View.Camere_View;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.stage.Stage;
 
 import static AudioSystem.AudioSystem.get_System;
 import static AudioSystem.AudioSystem.sistem;
 
-public class Audio_System_Controller {
+public class Audio_System_Controller implements Close_Window {
+
 
     @FXML
     private Button Sistem_next_camere;
@@ -17,6 +20,8 @@ public class Audio_System_Controller {
     private TextField field_nume_sistem;
     @FXML
     private Label label_nume_sistem;
+    @FXML
+    private Button butt_close_casa;
 
 
     @FXML
@@ -31,8 +36,8 @@ public class Audio_System_Controller {
             field_nume_sistem.setVisible(false);
             label_nume_sistem.setText("Numele Sistemului: " + sistem.getNumeSistem());
             Sistem_next_camere.setVisible(true);
+            butt_close_casa.setVisible(true);
         }
-
     }
 
 
@@ -42,24 +47,13 @@ public class Audio_System_Controller {
         //stage.close();
 
         Camere_View.open_Camere_View();
-        /*try {
-            FXMLLoader Fcamere = new FXMLLoader(getClass().getResource("Camere.fxml"));
-            Scene scene = new Scene(Fcamere.load(), 500, 600);
 
-            Camere_Controller camere_controller = Fcamere.getController();
-            camere_controller.setLabel_nume_sistem();
+    }
 
-
-            Stage newStage = new Stage();
-
-            newStage.setTitle("Manager de camere");
-            newStage.setScene(scene);
-            newStage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        */
-
+    @FXML
+    public void on_back() {
+        Stage stage = (Stage) butt_close_casa.getScene().getWindow();
+        stage.close();
     }
 
 }

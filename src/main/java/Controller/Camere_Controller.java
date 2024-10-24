@@ -2,6 +2,7 @@ package Controller;
 
 
 import AudioSystem.Camera;
+import Interfaces.Close_Window;
 import View.Difuzoare_View;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
@@ -11,7 +12,7 @@ import java.util.Optional;
 
 import static AudioSystem.AudioSystem.sistem;
 
-public class Camere_Controller {
+public class Camere_Controller implements Close_Window {
 
 
     @FXML
@@ -223,40 +224,19 @@ public class Camere_Controller {
             return;
         }
         sistem.addcamera(nume, volumCamera);
-        //sistem.nrcamere++;
+
 
     }
 
 
     private void deschide_form_difuzoare(Camera[] arrayCamere, int index) {
 
-
         Difuzoare_View.open_Difuzoare_View(arrayCamere, index);
-        /*
-        try {
-            FXMLLoader Fdifuzoare = new FXMLLoader(getClass().getResource("Difuzoare.fxml"));
 
-            Parent root = Fdifuzoare.load();
-            Difuzoare_Controller controller = Fdifuzoare.getController();
-
-            controller.setCamera(arrayCamere[index]);
-
-
-            Scene scene = new Scene(root, 500, 600);
-            Stage newStage = new Stage();
-            newStage.setTitle("Manager de difuzoare");
-            newStage.setScene(scene);
-
-            newStage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-         */
     }
 
     @FXML
-    private void on_back() {
+    public void on_back() {
         Stage stage = (Stage) butt_back_cam.getScene().getWindow();
         stage.close();
     }

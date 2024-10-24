@@ -2,6 +2,7 @@ package Controller;
 
 import AudioSystem.Camera;
 import AudioSystem.Difuzor;
+import Interfaces.Close_Window;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
@@ -9,7 +10,7 @@ import javafx.stage.Stage;
 import java.util.Optional;
 
 
-public class Difuzoare_Controller {
+public class Difuzoare_Controller implements Close_Window {
 
 
     @FXML
@@ -26,8 +27,6 @@ public class Difuzoare_Controller {
     private Button butt_dif_5;
     @FXML
     private Button butt_back_dif;
-    @FXML
-    private Button buton_add_difuzor;
 
 
     private Camera camera;
@@ -142,7 +141,7 @@ public class Difuzoare_Controller {
     }
 
     @FXML
-    private void on_back() {
+    public void on_back() {
         Stage stage = (Stage) butt_back_dif.getScene().getWindow();
         stage.close();
     }
