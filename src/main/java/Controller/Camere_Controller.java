@@ -209,7 +209,8 @@ public class Camere_Controller implements Close_Window {
         dialogVolum.setContentText("Volum Cameră (0 - 100):");
 
         Optional<String> resultVolum = dialogVolum.showAndWait();
-        if (!resultVolum.isPresent() || resultVolum.get().isEmpty()) {
+        if (!resultVolum.isPresent() || resultVolum.get().isBlank()) {
+            new Alert(Alert.AlertType.ERROR, "Volum invalid! Introduceți un număr întreg între 0 și 100.", ButtonType.OK).showAndWait();
             return;
         }
 

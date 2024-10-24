@@ -1,33 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
-<VBox alignment="CENTER" prefHeight="591.0" prefWidth="392.0" spacing="20.0" xmlns="http://javafx.com/javafx/23"
-      xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Camere_Controller">
+
+<VBox alignment="CENTER" prefHeight="591.0" prefWidth="392.0" spacing="20.0" style="-fx-background-color: #bbbbbb;" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Camere_Controller">
     <children>
         <Label fx:id="label_nume_sistem" text="Nume sistem">
             <font>
-                <Font name="System Bold Italic" size="16.0"/>
+                <Font name="System Bold Italic" size="16.0" />
             </font>
         </Label>
         <Label alignment="CENTER" prefHeight="17.0" prefWidth="152.0" text="Camere: ">
             <font>
-                <Font name="System Bold Italic" size="18.0"/>
+                <Font name="System Bold Italic" size="18.0" />
             </font>
         </Label>
-        <Button fx:id="butt_cam_1" mnemonicParsing="false" onAction="#on_butt_cam_1" text="Camera 1"/>
-        <Button fx:id="butt_cam_2" disable="true" mnemonicParsing="false" onAction="#on_butt_cam_2" text="Camera 2"/>
-        <Button fx:id="butt_cam_3" disable="true" mnemonicParsing="false" onAction="#on_butt_cam_3" text="Camera 3"/>
-        <Button fx:id="butt_cam_4" disable="true" mnemonicParsing="false" onAction="#on_butt_cam_4" text="Camera 4"/>
-        <Button fx:id="butt_cam_5" disable="true" mnemonicParsing="false" onAction="#on_butt_cam_5" text="Camera 5"/>
-        <Button fx:id="butt_cam_6" disable="true" mnemonicParsing="false" onAction="#on_butt_cam_6" text="Camera 6"/>
-        <Button fx:id="butt_cam_7" disable="true" mnemonicParsing="false" onAction="#on_butt_cam_7" text="Camera 7"/>
-        <Button fx:id="butt_cam_8" disable="true" mnemonicParsing="false" onAction="#on_butt_cam_8" text="Camera 8"/>
-        <Button fx:id="butt_cam_9" disable="true" mnemonicParsing="false" onAction="#on_butt_cam_9" text="Camera 9"/>
-        <Button fx:id="butt_cam_10" disable="true" mnemonicParsing="false" onAction="#on_butt_cam_10" text="Camera 10"/>
-        <Button fx:id="butt_back_cam" onAction="#on_back" mnemonicParsing="false" prefHeight="34.0" prefWidth="101.0"
-                text="&lt; Back"/>
+        <Button fx:id="butt_cam_1" mnemonicParsing="false" onAction="#on_butt_cam_1" text="Camera 1" />
+        <Button fx:id="butt_cam_2" disable="true" mnemonicParsing="false" onAction="#on_butt_cam_2" text="Camera 2" />
+        <Button fx:id="butt_cam_3" disable="true" mnemonicParsing="false" onAction="#on_butt_cam_3" text="Camera 3" />
+        <Button fx:id="butt_cam_4" disable="true" mnemonicParsing="false" onAction="#on_butt_cam_4" text="Camera 4" />
+        <Button fx:id="butt_cam_5" disable="true" mnemonicParsing="false" onAction="#on_butt_cam_5" text="Camera 5" />
+        <Button fx:id="butt_cam_6" disable="true" mnemonicParsing="false" onAction="#on_butt_cam_6" text="Camera 6" />
+        <Button fx:id="butt_cam_7" disable="true" mnemonicParsing="false" onAction="#on_butt_cam_7" text="Camera 7" />
+        <Button fx:id="butt_cam_8" disable="true" mnemonicParsing="false" onAction="#on_butt_cam_8" text="Camera 8" />
+        <Button fx:id="butt_cam_9" disable="true" mnemonicParsing="false" onAction="#on_butt_cam_9" text="Camera 9" />
+        <Button fx:id="butt_cam_10" disable="true" mnemonicParsing="false" onAction="#on_butt_cam_10" text="Camera 10" />
+        <Button fx:id="butt_back_cam" mnemonicParsing="false" onAction="#on_back" prefHeight="34.0" prefWidth="101.0" text="&lt; Back" />
     </children>
 
 
